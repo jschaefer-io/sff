@@ -1,0 +1,318 @@
+@import '../node_modules/normalize.css/normalize';
+
+
+// Colors
+$c1: #d429ff;
+$c2: #405fe0;
+
+$white: #fff;
+$black: #333;
+
+// Typo General
+$f-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$f-size: 16px;
+$f-height: 1.6;
+$f-color: #444;
+$f-weight-light: 300;
+$f-weight: 400;
+$f-weight-bold: 600;
+
+// Typo Headlines
+$h-font-family:  $f-family;
+$h-space: 2em 0 0.5em 0;
+$h-color: #444;
+$h-weight: $f-weight-bold;
+$h-height: 1.2;
+$h-sizes: (
+	h1: 2.25rem,
+	h2: 2.0rem,
+	h3: 1.5rem,
+	h4: 1.25rem,
+	h5: 1.125rem,
+	h6: 1rem
+);
+
+// Typo Bases
+$p-space: 1em 0;
+$p-lead-size: 1.3rem;
+$p-lead-margin: 0.5em 0 1em 0;
+$p-lead-style: normal;
+
+// Links
+$a-color: $c1;
+$a-color-hover: $c2;
+$a-decoration: underline;
+$a-decoration-h: underline;
+
+// Emphasis
+$i-style: italic;
+$i-color: inherit;
+
+// Strong
+$b-weight: $f-weight-bold;
+$b-color: inherit;
+
+// Horizontal Rule
+$hr-margin: 2em auto;
+$hr-height: 1px;
+$hr-color: #d3d3d6;
+
+// Blockquote
+$q-margin: 2em 0;
+$q-font-family: $f-family;
+$q-weight: $f-weight;
+$q-size: 1.3rem;
+$q-size-cite: 1rem;
+
+// Lists
+$l-margin: 1em 0;
+$l-padding: 0;
+$l-item-margin: 0.5em 0 0.5em 1.3em;
+$l-item-padding: 0 0 0 0.3em;
+$l-type-u: disc;
+$l-type-o: decimal;
+
+// Code
+$c-font: monospace;
+$c-weight: $f-weight-bold;
+$c-size: 0.9rem;
+$c-color: $c2;
+
+// Pre
+$pr-margin: 1em 0;
+$pr-background: #fdfdfd;
+$pr-border: 1px dashed #ccc;
+$pr-padding: 0.7rem 1rem;
+$pr-size: 0.9rem;
+
+// Keyboard Commands
+$kb-background: #fdfdfd;
+$kb-border: 1px dashed #ccc;
+$kb-padding: 0.2em 0.4em;
+$kb-margin: 0 0.2em;
+
+
+html,
+body{
+	font-weight: $f-weight;
+	font-family: $f-family;
+	font-size: $f-size;
+	line-height: $f-height;
+	color: $f-color;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+
+*{
+	&,
+	&:before,
+	&:after{
+		box-sizing: border-box;
+	}
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+dt,
+ul li,
+ol li,
+blockquote,
+cite,
+fieldset,
+label,
+input,
+textarea{
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+@mixin clearfix{
+	&:after{
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+%clearfix,
+.clearfix{
+	@include clearfix;
+}
+
+
+
+@mixin headlines{
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6{
+		@content;
+	}
+}
+
+@include headlines {
+	margin: $h-space;
+	color: $h-color;
+	line-height: $h-height;
+}
+
+@each $headline, $size in $h-sizes{
+	%#{$headline},
+	.#{$headline},
+	#{$headline}{
+		font-family: $h-font-family;
+		font-weight: $h-weight;
+		font-size: $size;
+	}
+}
+
+
+p{
+	margin: $p-space;
+}
+.lead{
+	font-size: $p-lead-size;
+	margin: $p-lead-margin;
+	font-style: $p-lead-style;
+}
+
+
+
+a{
+	color: $a-color;
+	text-decoration: $a-decoration;
+	&:hover{
+		color: $a-color-hover;
+		text-decoration: $a-decoration-h;
+	}
+}
+
+
+
+em,
+i{
+	font-style: $i-style;
+	color: $i-color;
+}
+
+
+
+strong,
+b{
+	font-weight: $b-weight;
+	color: $b-color;
+}
+
+
+
+hr{
+	margin: $hr-margin;
+	height: $hr-height;
+	background: $hr-color;
+	border: none;
+}
+
+
+blockquote{
+	margin: $q-margin;
+	font-family: $q-font-family;
+	font-weight: $q-weight;
+	font-size: $q-size;
+	@extend %clearfix;
+	p:nth-last-child(2){
+		margin-bottom: 0;
+	}
+	cite{
+		font-size: $q-size-cite;
+		font-style: normal;
+		float: right;
+		&:before{
+			content: '— ';
+		}
+	}
+}
+
+
+ol,
+ul{
+	margin: $l-margin;
+	padding: $l-padding;
+	li{
+		margin: $l-item-margin;
+		padding: $l-item-padding;
+	}
+}
+ol{
+	list-style-type: $l-type-o;
+}
+ul{
+	list-style-type: $l-type-u;
+}
+
+
+code{
+	font-size: $c-size;
+	color: $c-color;
+	font-family: $c-font;
+	font-weight: $c-weight;
+}
+
+pre{
+	margin: $pr-margin;
+	background: $pr-background;
+	border: $pr-border;
+	overflow: auto;
+	padding: $pr-padding;
+	font-size: $pr-size;
+	border-radius: 3px;
+}
+
+kbd{
+	background: $kb-background;
+	border: $kb-border;
+	padding: $kb-padding;
+	margin: $kb-margin;
+	border-radius: 3px;
+}
+
+
+$dl-margin: 1em 0;
+$dl-padding: 0 0 0 1em;
+$dl-term-margin: 0.5em 0;
+$dl-term-weight: $f-weight-bold;
+$dl-desc-margin: 0 0 1em 0;
+dl{
+	margin: $dl-margin;
+	padding: $dl-padding;
+	dt{
+		margin: $dl-term-margin;
+		font-weight: $dl-term-weight;
+	}
+	dd{
+		margin: $dl-desc-margin;
+
+	}
+}

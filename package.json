@@ -1,0 +1,38 @@
+{
+  "name": "sff",
+  "version": "1.0.0",
+  "description": "adaptive frontend framework",
+  "main": "dist/sff.css",
+  "scripts": {
+    "build": "npm run build:full",
+    "watch": "./node_modules/.bin/watch \"npm run build:default\" src --wait=0",
+    "build:prepare": "./node_modules/.bin/mkdirp dist",
+    "build:default": "npm run build:prepare && node ./node_modules/node-sass/bin/node-sass src/sff.scss > ./dist/sff.css",
+    "build:min": "npm run build:prepare && node ./node_modules/node-sass/bin/node-sass src/sff.scss --output-style compressed > ./dist/sff.min.css",
+    "build:full": "npm run build:default && npm run build:min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jschaefer-io/sff.git"
+  },
+  "keywords": [
+    "frontend",
+    "framework",
+    "scss",
+    "css",
+    "grid"
+  ],
+  "author": "Jannik Schäfer <me@jschaefer.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jschaefer-io/sff/issues"
+  },
+  "homepage": "https://github.com/jschaefer-io/sff#readme",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.7.2",
+    "normalize.css": "^8.0.0",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {}
+}
