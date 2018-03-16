@@ -4,6 +4,7 @@
   "description": "adaptive frontend framework",
   "main": "dist/sff.css",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "npm run build:full",
     "watch": "./node_modules/.bin/watch \"npm run build:default\" src --wait=0",
     "build:prepare": "./node_modules/.bin/mkdirp dist",
