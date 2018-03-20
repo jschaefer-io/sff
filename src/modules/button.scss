@@ -1,106 +1,105 @@
-
-
-
-%button{
-	appearance: none;
-	display: inline-block;
-	padding: 0.3em 1em;
-	background: $white;
-	border-radius: 3px;
-	border: 1px solid $f-color;
-	color: $f-color;
-	font: inherit;
-	cursor: pointer;
-	text-decoration: none;
-	margin: 1em 0;
-	&.prim{
-		background: $c1;
-		color: $white;
-		border: 1px solid transparent;
-		&:hover{
-			background: $white;
-			color: $c1;
-		}
-	}
-	&.sec{
-		background: $c2;
-		color: $white;
-		border: 1px solid transparent;
-		&:hover{
-			background: $white;
-			color: $c2;
-		}
-	}
-	&.dark{
-		background: $black;
-		color: $white;
-		border: 1px solid transparent;
-		&:hover{
-			background: $white;
-			color: $black;
-		}
-	}
-
-	&:hover{
-		background: darken($white, 3%);
+@mixin sff_button(){
+	%button{
+		appearance: none;
+		display: inline-block;
+		padding: 0.3em 1em;
+		background: $white;
+		border-radius: 3px;
+		border: 1px solid $f-color;
 		color: $f-color;
-		border: 1px solid currentColor;
+		font: inherit;
+		cursor: pointer;
 		text-decoration: none;
-	}
-	&.large{
-		font-size: 1.3rem;
-	}
-	&.small{
-		font-size: 0.8rem;
-	}
-	&.block{
-		display: block;
-		text-align: center;
-		width: 100%;
-		clear: both;
-	}
-	&.icon{
-		&-before,
-		&-after{
-			position: relative;
-			&:before{
-				content: '';
-				display: block;
-				position: absolute;
-				width: 1px;
-				height: 100%;
-				background: currentColor;
-				top: 0px;
-			}
-			> i,
-			> svg{
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
+		margin: 1em 0;
+		&.prim{
+			background: $c1;
+			color: $white;
+			border: 1px solid transparent;
+			&:hover{
+				background: $white;
+				color: $c1;
 			}
 		}
-		&-after{
-			padding-right: 3.3em;
-			&:before{
-				right: 2.2em;
-			}
-			> i,
-			> svg{
-				right: 0.4em;
+		&.sec{
+			background: $c2;
+			color: $white;
+			border: 1px solid transparent;
+			&:hover{
+				background: $white;
+				color: $c2;
 			}
 		}
-		&-before{
-			padding-left: 3.3em;
-			&:before{
-				left: 2.2em;
+		&.dark{
+			background: $black;
+			color: $white;
+			border: 1px solid transparent;
+			&:hover{
+				background: $white;
+				color: $black;
 			}
-			> i,
-			> svg{
-				left: 0.6em;
+		}
+
+		&:hover{
+			background: darken($white, 3%);
+			color: $f-color;
+			border: 1px solid currentColor;
+			text-decoration: none;
+		}
+		&.large{
+			font-size: 1.3rem;
+		}
+		&.small{
+			font-size: 0.8rem;
+		}
+		&.block{
+			display: block;
+			text-align: center;
+			width: 100%;
+			clear: both;
+		}
+		&.icon{
+			&-before,
+			&-after{
+				position: relative;
+				&:before{
+					content: '';
+					display: block;
+					position: absolute;
+					width: 1px;
+					height: 100%;
+					background: currentColor;
+					top: 0px;
+				}
+				> i,
+				> svg{
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+			&-after{
+				padding-right: 3.3em;
+				&:before{
+					right: 2.2em;
+				}
+				> i,
+				> svg{
+					right: 0.4em;
+				}
+			}
+			&-before{
+				padding-left: 3.3em;
+				&:before{
+					left: 2.2em;
+				}
+				> i,
+				> svg{
+					left: 0.6em;
+				}
 			}
 		}
 	}
-}
-.button{
-	@extend %button;
+	.button{
+		@extend %button;
+	}
 }

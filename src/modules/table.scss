@@ -1,0 +1,32 @@
+@mixin sff_table(){
+
+	.table-wrapper{
+		width: 100%;
+		overflow: auto;
+	}
+	table{
+		border-collapse: collapse;
+		width: 100%;
+		background: $t-cell-background;
+		margin: $t-margin;
+		font-size: $t-font-size;
+		line-height: $t-font-height;
+		th,
+		td{
+			padding: $t-padding;
+		}
+		td{
+			border: $t-cell-border;
+			text-align: $t-cell-align;
+			color: $t-cell-color;
+		}
+		th{
+			border: $t-head-border;
+			text-align: $t-head-align;
+			font-style: $t-head-style;
+			background: $t-head-background;
+			font-weight: $t-head-weight;
+			color: $t-head-color;
+		}
+	}
+}

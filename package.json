@@ -29,11 +29,6 @@
     "url": "https://github.com/jschaefer-io/sff/issues"
   },
   "homepage": "https://github.com/jschaefer-io/sff#readme",
-  "devDependencies": {
-    "mkdirp": "^0.5.1",
-    "node-sass": "^4.7.2",
-    "normalize.css": "^8.0.0",
-    "watch": "^1.0.2"
-  },
+  "devDependencies": {},
   "dependencies": {}
 }

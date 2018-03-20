@@ -1,145 +1,146 @@
-
-@include headlines {
-	margin: $h-space;
-	color: $h-color;
-	line-height: $h-height;
-}
-
-@each $headline, $size in $h-sizes{
-	%#{$headline},
-	.#{$headline},
-	#{$headline}{
-		font-family: $h-font-family;
-		font-weight: $h-weight;
-		font-size: $size;
+@mixin sff_typo(){
+	@include headlines {
+		margin: $h-space;
+		color: $h-color;
+		line-height: $h-height;
 	}
-}
 
-
-p{
-	margin: $p-space;
-}
-.lead{
-	font-size: $p-lead-size;
-	margin: $p-lead-margin;
-	font-style: $p-lead-style;
-}
-
-
-
-a{
-	color: $a-color;
-	text-decoration: $a-decoration;
-	&:hover{
-		color: $a-color-hover;
-		text-decoration: $a-decoration-h;
-	}
-}
-
-
-
-em,
-i{
-	font-style: $i-style;
-	color: $i-color;
-}
-
-
-
-strong,
-b{
-	font-weight: $b-weight;
-	color: $b-color;
-}
-
-
-
-hr{
-	margin: $hr-margin;
-	height: $hr-height;
-	background: $hr-color;
-	border: none;
-}
-
-
-blockquote{
-	margin: $q-margin;
-	font-family: $q-font-family;
-	font-weight: $q-weight;
-	font-size: $q-size;
-	@extend %clearfix;
-	p:nth-last-child(2){
-		margin-bottom: 0;
-	}
-	cite{
-		font-size: $q-size-cite;
-		font-style: normal;
-		float: right;
-		&:before{
-			content: '— ';
+	@each $headline, $size in $h-sizes{
+		%#{$headline},
+		.#{$headline},
+		#{$headline}{
+			font-family: $h-font-family;
+			font-weight: $h-weight;
+			font-size: $size;
 		}
 	}
-}
 
 
-ol,
-ul{
-	margin: $l-margin;
-	padding: $l-padding;
-	li{
-		margin: $l-item-margin;
-		padding: $l-item-padding;
+	p{
+		margin: $p-space;
 	}
-}
-ol{
-	list-style-type: $l-type-o;
-}
-ul{
-	list-style-type: $l-type-u;
-}
-
-
-code{
-	font-size: $c-size;
-	color: $c-color;
-	font-family: $c-font;
-	font-weight: $c-weight;
-}
-
-pre{
-	margin: $pr-margin;
-	background: $pr-background;
-	border: $pr-border;
-	overflow: auto;
-	padding: $pr-padding;
-	font-size: $pr-size;
-	border-radius: 3px;
-}
-
-kbd{
-	background: $kb-background;
-	border: $kb-border;
-	padding: $kb-padding;
-	margin: $kb-margin;
-	border-radius: 3px;
-}
-
-
-dl{
-	margin: $dl-margin;
-	padding: $dl-padding;
-	dt{
-		margin: $dl-term-margin;
-		font-weight: $dl-term-weight;
+	.lead{
+		font-size: $p-lead-size;
+		margin: $p-lead-margin;
+		font-style: $p-lead-style;
 	}
-	dd{
-		margin: $dl-desc-margin;
 
+
+
+	a{
+		color: $a-color;
+		text-decoration: $a-decoration;
+		&:hover{
+			color: $a-color-hover;
+			text-decoration: $a-decoration-h;
+		}
 	}
-}
 
-mark{
-	padding: $ma-padding;
-	color: $ma-color;
-	background: $ma-background;
+
+
+	em,
+	i{
+		font-style: $i-style;
+		color: $i-color;
+	}
+
+
+
+	strong,
+	b{
+		font-weight: $b-weight;
+		color: $b-color;
+	}
+
+
+
+	hr{
+		margin: $hr-margin;
+		height: $hr-height;
+		background: $hr-color;
+		border: none;
+	}
+
+
+	blockquote{
+		margin: $q-margin;
+		font-family: $q-font-family;
+		font-weight: $q-weight;
+		font-size: $q-size;
+		@include clearfix;
+		p:nth-last-child(2){
+			margin-bottom: 0;
+		}
+		cite{
+			font-size: $q-size-cite;
+			font-style: normal;
+			float: right;
+			&:before{
+				content: '— ';
+			}
+		}
+	}
+
+
+	ol,
+	ul{
+		margin: $l-margin;
+		padding: $l-padding;
+		li{
+			margin: $l-item-margin;
+			padding: $l-item-padding;
+		}
+	}
+	ol{
+		list-style-type: $l-type-o;
+	}
+	ul{
+		list-style-type: $l-type-u;
+	}
+
+
+	code{
+		font-size: $c-size;
+		color: $c-color;
+		font-family: $c-font;
+		font-weight: $c-weight;
+	}
+
+	pre{
+		margin: $pr-margin;
+		background: $pr-background;
+		border: $pr-border;
+		overflow: auto;
+		padding: $pr-padding;
+		font-size: $pr-size;
+		border-radius: 3px;
+	}
+
+	kbd{
+		background: $kb-background;
+		border: $kb-border;
+		padding: $kb-padding;
+		margin: $kb-margin;
+		border-radius: 3px;
+	}
+
+
+	dl{
+		margin: $dl-margin;
+		padding: $dl-padding;
+		dt{
+			margin: $dl-term-margin;
+			font-weight: $dl-term-weight;
+		}
+		dd{
+			margin: $dl-desc-margin;
+
+		}
+	}
+
+	mark{
+		padding: $ma-padding;
+		color: $ma-color;
+		background: $ma-background;
+	}
 }
