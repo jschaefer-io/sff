@@ -127,6 +127,22 @@ $t-head-weight: $f-weight-bold!default;
 $t-head-color: $f-color!default;
 $t-head-background: #f1f1f1!default;
 
+// Buttons
+$bt-margin: 1em 0;
+$bt-padding: 0.3em 1em;
+$bt-default-background: $white;
+$bt-default-border: 1px solid $f-color;
+$bt-default-color: $f-color;
+$bt-default-hover-background: darken($white, 3%);
+$bt-default-hover-color: $f-color;
+$bt-default-hover-border: 1px solid currentColor;
+$bt-dark-background: $black;
+$bt-dark-color: $white;
+$bt-dark-border: 1px solid transparent;
+$bt-dark-hover-background: $white;
+$bt-dark-hover-color: $black;
+
+
 
 
 // Include the module-mixins

@@ -2,7 +2,7 @@
   "name": "sff",
   "version": "1.0.0",
   "description": "adaptive frontend framework",
-  "main": "dist/sff.css",
+  "main": "src/sff.scss",
   "scripts": {
     "prepublish": "npm run build",
     "build": "npm run build:full",

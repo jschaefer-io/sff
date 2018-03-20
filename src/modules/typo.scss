@@ -68,7 +68,7 @@
 		font-weight: $q-weight;
 		font-size: $q-size;
 		@include clearfix;
-		p:nth-last-child(2){
+		p:last-of-type{
 			margin-bottom: 0;
 		}
 		cite{
