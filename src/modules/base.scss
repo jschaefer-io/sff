@@ -1,0 +1,59 @@
+html,
+body{
+	font-weight: $f-weight;
+	font-family: $f-family;
+	font-size: $f-size;
+	line-height: $f-height;
+	color: $f-color;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+
+*{
+	&,
+	&:before,
+	&:after{
+		box-sizing: border-box;
+	}
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+dt,
+ul li,
+ol li,
+blockquote,
+cite,
+fieldset,
+label,
+input,
+textarea{
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+%clearfix,
+.clearfix{
+	@include clearfix;
+}

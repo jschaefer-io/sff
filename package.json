@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "npm run build:full",
-    "watch": "./node_modules/.bin/watch \"npm run build:default\" src --wait=0",
+    "watch": "./node_modules/.bin/watch \"npm run build:default\" src",
     "build:prepare": "./node_modules/.bin/mkdirp dist",
     "build:default": "npm run build:prepare && node ./node_modules/node-sass/bin/node-sass src/sff.scss > ./dist/sff.css",
     "build:min": "npm run build:prepare && node ./node_modules/node-sass/bin/node-sass src/sff.scss --output-style compressed > ./dist/sff.min.css",
