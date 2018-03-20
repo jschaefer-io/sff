@@ -128,19 +128,19 @@ $t-head-color: $f-color!default;
 $t-head-background: #f1f1f1!default;
 
 // Buttons
-$bt-margin: 1em 0;
-$bt-padding: 0.3em 1em;
-$bt-default-background: $white;
-$bt-default-border: 1px solid $f-color;
-$bt-default-color: $f-color;
-$bt-default-hover-background: darken($white, 3%);
-$bt-default-hover-color: $f-color;
-$bt-default-hover-border: 1px solid currentColor;
-$bt-dark-background: $black;
-$bt-dark-color: $white;
-$bt-dark-border: 1px solid transparent;
-$bt-dark-hover-background: $white;
-$bt-dark-hover-color: $black;
+$bt-margin: 1em 0!default;
+$bt-padding: 0.3em 1em!default;
+$bt-default-background: $white!default;
+$bt-default-border: 1px solid $f-color!default;
+$bt-default-color: $f-color!default;
+$bt-default-hover-background: darken($white, 3%)!default;
+$bt-default-hover-color: $f-color!default;
+$bt-default-hover-border: 1px solid currentColor!default;
+$bt-dark-background: $black!default;
+$bt-dark-color: $white!default;
+$bt-dark-border: 1px solid transparent!default;
+$bt-dark-hover-background: $white!default;
+$bt-dark-hover-color: $black!default;
 
 
 
