@@ -2,15 +2,15 @@
 	%button{
 		appearance: none;
 		display: inline-block;
-		padding: 0.3em 1em;
-		background: $white;
+		padding: $bt-padding;
+		background: $bt-default-background;
 		border-radius: 3px;
-		border: 1px solid $f-color;
-		color: $f-color;
+		border: $bt-default-border;
+		color: $bt-default-color:;
 		font: inherit;
 		cursor: pointer;
 		text-decoration: none;
-		margin: 1em 0;
+		margin: $bt-margin;
 		&.prim{
 			background: $c1;
 			color: $white;
@@ -30,19 +30,19 @@
 			}
 		}
 		&.dark{
-			background: $black;
-			color: $white;
-			border: 1px solid transparent;
+			background: $bt-dark-background;
+			color: $bt-dark-color;
+			border: $bt-dark-border;
 			&:hover{
-				background: $white;
-				color: $black;
+				background: $bt-dark-hover-background;
+				color: $bt-dark-hover-color;
 			}
 		}
 
 		&:hover{
-			background: darken($white, 3%);
-			color: $f-color;
-			border: 1px solid currentColor;
+			background: $bt-default-hover-background;
+			color: $bt-default-hover-color;
+			border: $bt-default-hover-border;
 			text-decoration: none;
 		}
 		&.large{
