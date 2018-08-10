@@ -1,0 +1,51 @@
+@mixin sff_visibility_h_log($count, $i, $keys){
+    %hide-#{$i}-only{
+        display: none !important;
+    }
+    .hide-#{nth($keys, $i)}-only{
+        @extend %hide-#{$i}-only;
+    }
+    @for $c from 1 through $count{
+        @if ($c != $i){
+            .show-#{nth($keys, $c)}-only{
+                @extend %hide-#{$i}-only;
+            }
+        }
+        @if ($c > $i){
+            .show-#{nth($keys, $c)}{
+                @extend %hide-#{$i}-only;
+            }
+        }
+        @if ($c <= $i){
+            .hide-#{nth($keys, $c)}{
+                @extend %hide-#{$i}-only;
+            }
+        }
+    }
+}
+
+@mixin sff_visibility(){
+    $visibility-size-chart: (
+        'values': map_values($sizes),
+        'keys': map_keys($sizes)
+    );
+    $size-count: length(map-get($visibility-size-chart, 'values'));
+
+    .hide{
+        display: none !important;
+    }
+
+    @if ($size-count != 0){
+        @for $i from 1 through $size-count{
+            @include minWidth(nth(map-get($visibility-size-chart, 'values'), $i)){
+                @if ($i != $size-count){
+                    @include maxWidth(nth(map-get($visibility-size-chart, 'values'), $i + 1) - 1){
+                        @include sff_visibility_h_log($size-count, $i, map-get($visibility-size-chart, 'keys'));
+                    }
+                } @else{
+                    @include sff_visibility_h_log($size-count, $i, map-get($visibility-size-chart, 'keys'));
+                }
+            }
+        }
+    }
+}

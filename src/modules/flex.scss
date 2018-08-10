@@ -1,0 +1,109 @@
+@mixin sff_flex(){
+    .flex{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: $flex-gutter * -1;
+        &.inline{
+            display: inline-flex;
+        }
+        &.nowrap{
+            flex-wrap: nowrap;
+        }
+        &.rewrap{
+            flex-wrap: wrap-reverse;
+        }
+        &.direction{
+            &-left{
+                flex-direction: row-reverse;
+            }
+            &-top{
+                flex-direction: column-reverse;
+            }
+            &-bottom{
+                flex-direction: column;
+            }
+        }
+
+        &.center,
+        &.justify-center{
+            justify-content: center;
+        }
+        &.center,
+        &.align-center{
+            align-items: center;
+        }
+        &.justify{
+            &-end{
+                justify-content: flex-end;
+            }
+            &-space{
+                &-around{
+                    justify-content: space-around;
+                }
+                &-between{
+                    justify-content: space-between;
+                }
+            }
+        }
+        &.align{
+            &-end{
+                align-items: flex-end;
+            }
+        }
+
+        &__item{
+            padding-left: $flex-gutter;
+            margin-bottom: $flex-gutter;
+            flex: 0 1 auto;
+            &.grow{
+                flex-grow: 1;
+            }
+        }
+
+        &.no-gutter{
+            &,
+            &-x{
+                margin-left: 0;
+                .flex__item{
+                    padding-left: 0;
+                }
+            }
+            &,
+            &-y{
+                .flex__item{
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+
+        // Pass Each Size
+        @each $size, $width in $sizes{
+            // Media Query for the current Size
+            @include minWidth($width){
+                // Pass all coumns
+                @for $i from 1 through $flex-colCount{
+                    // Exclude Columns
+                    @if (not(index($flex-colExclude, $i))){
+                        // Main Columns Sizes
+                        .#{$size}-#{$i}{
+                            max-width: (( 100% / $flex-colCount ) * $i);
+                            flex: 0 1 (( 100% / $flex-colCount ) * $i);
+                        }
+                        // Push Pull Helpers
+                        @if ($flex-pushPull){
+                            @if ($i != $flex-colCount){
+                                .#{$size}-push-#{$i}{
+                                    margin-left: (( 100% / $flex-colCount ) * $i);
+                                }
+                                .#{$size}-pull-#{$i}{
+                                    margin-right: (( 100% / $flex-colCount ) * $i) * (-1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

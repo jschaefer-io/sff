@@ -1,105 +1,105 @@
 @mixin sff_button(){
-	%button{
-		appearance: none;
-		display: inline-block;
-		padding: $bt-padding;
-		background: $bt-default-background;
-		border-radius: 3px;
-		border: $bt-default-border;
-		color: $bt-default-color;
-		font: inherit;
-		cursor: pointer;
-		text-decoration: none;
-		margin: $bt-margin;
-		&.prim{
-			background: $c1;
-			color: $white;
-			border: 1px solid transparent;
-			&:hover{
-				background: $white;
-				color: $c1;
-			}
-		}
-		&.sec{
-			background: $c2;
-			color: $white;
-			border: 1px solid transparent;
-			&:hover{
-				background: $white;
-				color: $c2;
-			}
-		}
-		&.dark{
-			background: $bt-dark-background;
-			color: $bt-dark-color;
-			border: $bt-dark-border;
-			&:hover{
-				background: $bt-dark-hover-background;
-				color: $bt-dark-hover-color;
-			}
-		}
+    %button{
+        appearance: none;
+        display: inline-block;
+        padding: $bt-padding;
+        background: $bt-default-background;
+        border-radius: 3px;
+        border: $bt-default-border;
+        color: $bt-default-color;
+        font: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        margin: $bt-margin;
+        &.prim{
+            background: $c1;
+            color: $white;
+            border: 1px solid transparent;
+            &:hover{
+                background: $white;
+                color: $c1;
+            }
+        }
+        &.sec{
+            background: $c2;
+            color: $white;
+            border: 1px solid transparent;
+            &:hover{
+                background: $white;
+                color: $c2;
+            }
+        }
+        &.dark{
+            background: $bt-dark-background;
+            color: $bt-dark-color;
+            border: $bt-dark-border;
+            &:hover{
+                background: $bt-dark-hover-background;
+                color: $bt-dark-hover-color;
+            }
+        }
 
-		&:hover{
-			background: $bt-default-hover-background;
-			color: $bt-default-hover-color;
-			border: $bt-default-hover-border;
-			text-decoration: none;
-		}
-		&.large{
-			font-size: 1.3rem;
-		}
-		&.small{
-			font-size: 0.8rem;
-		}
-		&.block{
-			display: block;
-			text-align: center;
-			width: 100%;
-			clear: both;
-		}
-		&.icon{
-			&-before,
-			&-after{
-				position: relative;
-				&:before{
-					content: '';
-					display: block;
-					position: absolute;
-					width: 1px;
-					height: 100%;
-					background: currentColor;
-					top: 0px;
-				}
-				> i,
-				> svg{
-					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
-				}
-			}
-			&-after{
-				padding-right: 3.3em;
-				&:before{
-					right: 2.2em;
-				}
-				> i,
-				> svg{
-					right: 0.4em;
-				}
-			}
-			&-before{
-				padding-left: 3.3em;
-				&:before{
-					left: 2.2em;
-				}
-				> i,
-				> svg{
-					left: 0.6em;
-				}
-			}
-		}
-	}
-	.button{
-		@extend %button;
-	}
+        &:hover{
+            background: $bt-default-hover-background;
+            color: $bt-default-hover-color;
+            border: $bt-default-hover-border;
+            text-decoration: none;
+        }
+        &.large{
+            font-size: 1.3rem;
+        }
+        &.small{
+            font-size: 0.8rem;
+        }
+        &.block{
+            display: block;
+            text-align: center;
+            width: 100%;
+            clear: both;
+        }
+        &.icon{
+            &-before,
+            &-after{
+                position: relative;
+                &:before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 1px;
+                    height: 100%;
+                    background: currentColor;
+                    top: 0px;
+                }
+                > i,
+                > svg{
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+            &-after{
+                padding-right: 3.3em;
+                &:before{
+                    right: 2.2em;
+                }
+                > i,
+                > svg{
+                    right: 0.4em;
+                }
+            }
+            &-before{
+                padding-left: 3.3em;
+                &:before{
+                    left: 2.2em;
+                }
+                > i,
+                > svg{
+                    left: 0.6em;
+                }
+            }
+        }
+    }
+    .button{
+        @extend %button;
+    }
 }

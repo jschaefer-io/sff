@@ -1,164 +1,180 @@
 // Colors
-$c1: #d429ff!default;
-$c2: #405fe0!default;
+$c1: #d429ff !default;
+$c2: #405fe0 !default;
 
-$white: #fff!default;
-$black: #333!default;
+$white: #fff !default;
+$black: #333 !default;
 
+// Sizes
+$sizes: (
+    'small' : 0px,
+    'medium' : 480px,
+    'large' : 640px,
+    'x-large' : 1024px
+) !default;
+
+// Flex-Grid
+$flex-colCount: 6 !default;
+$flex-pushPull: false !default;
+$flex-colExclude: () !default;
+$flex-gutter: 30px !default;
 
 // Typo General
-$f-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif!default;
-$f-size: 16px!default;
-$f-height: 1.6!default;
-$f-color: #444!default;
-$f-weight-light: 300!default;
-$f-weight: 400!default;
-$f-weight-bold: 600!default;
+$f-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$f-size: 16px !default;
+$f-size-mobile: $f-size !default;
+$f-size-from: 'large' !default;
+$f-height: 1.6 !default;
+$f-color: #444 !default;
+$f-weight-light: 300 !default;
+$f-weight: 400 !default;
+$f-weight-bold: 600 !default;
 
 // Typo Headlines
-$h-font-family:  $f-family!default;
-$h-space: 2em 0 0.5em 0!default;
-$h-color: #444!default;
-$h-weight: $f-weight-bold!default;
-$h-height: 1.2!default;
+$h-font-family: $f-family !default;
+$h-space: 2em 0 0.5em 0 !default;
+$h-color: #444 !default;
+$h-weight: $f-weight-bold !default;
+$h-height: 1.2 !default;
 $h-sizes: (
-	h1: 2.25rem,
-	h2: 2.0rem,
-	h3: 1.5rem,
-	h4: 1.25rem,
-	h5: 1.125rem,
-	h6: 1rem
-)!default;
+    h1: 2.25rem,
+    h2: 2.0rem,
+    h3: 1.5rem,
+    h4: 1.25rem,
+    h5: 1.125rem,
+    h6: 1rem
+) !default;
 
 // Typo Bases
-$p-space: 1em 0!default;
-$p-lead-size: 1.3rem!default;
-$p-lead-margin: 0.5em 0 1em 0!default;
-$p-lead-style: normal!default;
+$p-space: 1em 0 !default;
+$p-lead-size: 1.3rem !default;
+$p-lead-margin: 0.5em 0 1em 0 !default;
+$p-lead-style: normal !default;
 
 // Links
-$a-color: $c1!default;
-$a-color-hover: $c2!default;
-$a-decoration: underline!default;
-$a-decoration-h: underline!default;
+$a-color: $c1 !default;
+$a-color-hover: $c2 !default;
+$a-decoration: underline !default;
+$a-decoration-h: underline !default;
 
 // Emphasis
-$i-style: italic!default;
-$i-color: inherit!default;
+$i-style: italic !default;
+$i-color: inherit !default;
 
 // Strong
-$b-weight: $f-weight-bold!default;
-$b-color: inherit!default;
+$b-weight: $f-weight-bold !default;
+$b-color: inherit !default;
 
 // Horizontal Rule
-$hr-margin: 2em auto!default;
-$hr-height: 1px!default;
-$hr-color: #d3d3d6!default;
+$hr-margin: 2em auto !default;
+$hr-height: 1px !default;
+$hr-color: #d3d3d6 !default;
 
 // Blockquote
-$q-margin: 2em 0!default;
-$q-font-family: $f-family!default;
-$q-weight: $f-weight!default;
-$q-size: 1.3rem!default;
-$q-size-cite: 1rem!default;
+$q-margin: 2em 0 !default;
+$q-font-family: $f-family !default;
+$q-weight: $f-weight !default;
+$q-size: 1.3rem !default;
+$q-size-cite: 1rem !default;
 
 // Lists
-$l-margin: 1em 0!default;
-$l-padding: 0!default;
-$l-item-margin: 0.5em 0 0.5em 1.3em!default;
-$l-item-padding: 0 0 0 0.3em!default;
-$l-type-u: disc!default;
-$l-type-o: decimal!default;
+$l-margin: 1em 0 !default;
+$l-padding: 0 !default;
+$l-item-margin: 0.5em 0 0.5em 1.3em !default;
+$l-item-padding: 0 0 0 0.3em !default;
+$l-type-u: disc !default;
+$l-type-o: decimal !default;
 
 // Code
-$c-font: monospace!default;
-$c-weight: $f-weight-bold!default;
-$c-size: 0.9rem!default;
-$c-color: $c2!default;
+$c-font: monospace !default;
+$c-weight: $f-weight-bold !default;
+$c-size: 0.9rem !default;
+$c-color: $c2 !default;
 
 // Pre
-$pr-margin: 1em 0!default;
-$pr-background: #fdfdfd!default;
-$pr-border: 1px dashed #ccc!default;
-$pr-padding: 0.7rem 1rem!default;
-$pr-size: 0.9rem!default;
+$pr-margin: 1em 0 !default;
+$pr-background: #fdfdfd !default;
+$pr-border: 1px dashed #ccc !default;
+$pr-padding: 0.7rem 1rem !default;
+$pr-size: 0.9rem !default;
 
 // Keyboard Commands
-$kb-background: #fdfdfd!default;
-$kb-border: 1px dashed #ccc!default;
-$kb-padding: 0.2em 0.4em!default;
-$kb-margin: 0 0.2em!default;
+$kb-background: #fdfdfd !default;
+$kb-border: 1px dashed #ccc !default;
+$kb-padding: 0.2em 0.4em !default;
+$kb-margin: 0 0.2em !default;
 
 // Definition List
-$dl-margin: 1em 0!default;
-$dl-padding: 0 0 0 1em!default;
-$dl-term-margin: 0.5em 0!default;
-$dl-term-weight: $f-weight-bold!default;
-$dl-desc-margin: 0 0 1em 0!default;
+$dl-margin: 1em 0 !default;
+$dl-padding: 0 0 0 1em !default;
+$dl-term-margin: 0.5em 0 !default;
+$dl-term-weight: $f-weight-bold !default;
+$dl-desc-margin: 0 0 1em 0 !default;
 
 // Mark
-$ma-padding: 0.2em 0.4em!default;
-$ma-color: $f-color!default;
-$ma-background: yellow!default;
+$ma-padding: 0.2em 0.4em !default;
+$ma-color: $f-color !default;
+$ma-background: yellow !default;
 
 // Forms
-$fo-margin: 1em 0!default;
-$fo-field-margin: 1em 0!default;
-$fo-field-border: 1px solid #ccc!default;
-$fo-field-background: $white!default;
-$fo-field-disabled: #f1f1f1!default;
-$fo-field-color: $f-color!default;
-$fo-field-padding: 0.7em!default;
-$fo-field-height: 2.7em!default;
+$fo-margin: 1em 0 !default;
+$fo-field-margin: 1em 0 !default;
+$fo-field-border: 1px solid #ccc !default;
+$fo-field-background: $white !default;
+$fo-field-disabled: #f1f1f1 !default;
+$fo-field-color: $f-color !default;
+$fo-field-padding: 0.7em !default;
+$fo-field-height: 2.7em !default;
 
 // Tables
-$t-margin: 1em 0!default;
-$t-padding: 0.5em 0.7em!default;
-$t-font-size: 1em!default;
-$t-font-height: 1.35!default;
-$t-cell-border: 1px solid #ccc!default;
-$t-cell-align: left!default;
-$t-cell-color: $f-color!default;
-$t-cell-background: $white!default;
-$t-head-border: 1px solid #ccc!default;
-$t-head-align: left!default;
-$t-head-style: normal!default;
-$t-head-weight: $f-weight-bold!default;
-$t-head-color: $f-color!default;
-$t-head-background: #f1f1f1!default;
+$t-margin: 1em 0 !default;
+$t-padding: 0.5em 0.7em !default;
+$t-font-size: 1em !default;
+$t-font-height: 1.35 !default;
+$t-cell-border: 1px solid #ccc !default;
+$t-cell-align: left !default;
+$t-cell-color: $f-color !default;
+$t-cell-background: $white !default;
+$t-head-border: 1px solid #ccc !default;
+$t-head-align: left !default;
+$t-head-style: normal !default;
+$t-head-weight: $f-weight-bold !default;
+$t-head-color: $f-color !default;
+$t-head-background: #f1f1f1 !default;
 
 // Buttons
-$bt-margin: 1em 0!default;
-$bt-padding: 0.3em 1em!default;
-$bt-default-background: $white!default;
-$bt-default-border: 1px solid $f-color!default;
-$bt-default-color: $f-color!default;
-$bt-default-hover-background: darken($white, 3%)!default;
-$bt-default-hover-color: $f-color!default;
-$bt-default-hover-border: 1px solid currentColor!default;
-$bt-dark-background: $black!default;
-$bt-dark-color: $white!default;
-$bt-dark-border: 1px solid transparent!default;
-$bt-dark-hover-background: $white!default;
-$bt-dark-hover-color: $black!default;
-
-
-
+$bt-margin: 1em 0 !default;
+$bt-padding: 0.3em 1em !default;
+$bt-default-background: $white !default;
+$bt-default-border: 1px solid $f-color !default;
+$bt-default-color: $f-color !default;
+$bt-default-hover-background: darken($white, 3%) !default;
+$bt-default-hover-color: $f-color !default;
+$bt-default-hover-border: 1px solid currentColor !default;
+$bt-dark-background: $black !default;
+$bt-dark-color: $white !default;
+$bt-dark-border: 1px solid transparent !default;
+$bt-dark-hover-background: $white !default;
+$bt-dark-hover-color: $black !default;
 
 // Include the module-mixins
 @import 'modules/mixins';
+@import 'modules/functions';
 @import 'modules/base';
 @import 'modules/typo';
 @import 'modules/form';
 @import 'modules/button';
 @import 'modules/table';
-
+@import 'modules/flex';
+@import 'modules/visibility';
 
 // Provider Mixin
 @mixin sff{
-	@include sff_base();
-	@include sff_typo();
-	@include sff_form();
-	@include sff_button();
-	@include sff_table();
+    @include sff_base();
+    @include sff_typo();
+    @include sff_form();
+    @include sff_button();
+    @include sff_table();
+    @include sff_flex();
+    @include sff_visibility();
 }

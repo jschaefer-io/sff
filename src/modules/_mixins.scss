@@ -1,18 +1,48 @@
+// Helper to add the clearfix styles
 @mixin clearfix{
-	&:after{
-		content: '';
-		display: table;
-		clear: both;
-	}
+    &:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
 }
 
+// Helper to access all headline tags
 @mixin headlines{
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6{
-		@content;
-	}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6{
+        @content;
+    }
+}
+
+// Helper for a minWidth media query
+@mixin minWidth($width){
+    @media (min-width: $width){
+        @content;
+    }
+}
+
+// Helper for a maxWidth media query
+@mixin maxWidth($width){
+    @media (max-width: $width){
+        @content;
+    }
+}
+
+// Helper for a minHeight media query
+@mixin minHeight($height){
+    @media (min-height: $height){
+        @content;
+    }
+}
+
+// Helper for a maxHeight media query
+@mixin maxHeight($height){
+    @media (max-height: $height){
+        @content;
+    }
 }

@@ -1,61 +1,62 @@
 @mixin sff_base(){
-	html,
-	body{
-		font-weight: $f-weight;
-		font-family: $f-family;
-		font-size: $f-size;
-		line-height: $f-height;
-		color: $f-color;
-		text-rendering: optimizeLegibility;
-		-webkit-font-smoothing: antialiased;
-	  	-moz-osx-font-smoothing: grayscale;
-	}
+    html,
+    body{
+        color: $f-color;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: $f-weight;
+        font-family: $f-family;
+        line-height: $f-height;
+        font-size: $f-size-mobile;
+        @if ($f-size-mobile != $f-size){
+            @include minWidth(getSize($f-size-from)){
+                font-size: $f-size;
+            }
+        }
+    }
 
-	*{
-		&,
-		&:before,
-		&:after{
-			box-sizing: border-box;
-		}
-	}
+    *{
+        &,
+        &:before,
+        &:after{
+            box-sizing: border-box;
+        }
+    }
 
-	img{
-		max-width: 100%;
-		height: auto;
-	}
+    img{
+        max-width: 100%;
+        height: auto;
+    }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    dl,
+    dd,
+    dt,
+    ul li,
+    ol li,
+    blockquote,
+    cite,
+    fieldset,
+    label,
+    input,
+    textarea{
+        &:first-child{
+            margin-top: 0;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	dl,
-	dd,
-	dt,
-	ul li,
-	ol li,
-	blockquote,
-	cite,
-	fieldset,
-	label,
-	input,
-	textarea{
-		&:first-child {
-			margin-top: 0;
-		}
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-
-
-
-
-	%clearfix,
-	.clearfix{
-		@include clearfix;
-	}
+    %clearfix,
+    .clearfix{
+        @include clearfix;
+    }
 }
