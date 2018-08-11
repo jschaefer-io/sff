@@ -25,6 +25,7 @@
     }
 
     a{
+        transition: $a-transition;
         color: $a-color;
         text-decoration: $a-decoration;
         &:hover{

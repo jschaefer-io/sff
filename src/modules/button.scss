@@ -4,29 +4,32 @@
         display: inline-block;
         padding: $bt-padding;
         background: $bt-default-background;
-        border-radius: 3px;
+        border-radius: $bt-radius;
         border: $bt-default-border;
         color: $bt-default-color;
         font: inherit;
         cursor: pointer;
         text-decoration: none;
         margin: $bt-margin;
+        transition: $bt-transition;
         &.prim{
-            background: $c1;
-            color: $white;
-            border: 1px solid transparent;
+            background: $bt-prim-background;
+            color: $bt-prim-color;
+            border: $bt-prim-border;
             &:hover{
-                background: $white;
-                color: $c1;
+                background: $bt-prim-hover-background;
+                color: $bt-prim-hover-color;
+                border: $bt-prim-hover-border;
             }
         }
         &.sec{
-            background: $c2;
-            color: $white;
-            border: 1px solid transparent;
+            background: $bt-sec-background;
+            color: $bt-sec-color;
+            border: $bt-sec-border;
             &:hover{
-                background: $white;
-                color: $c2;
+                background: $bt-sec-hover-background;
+                color: $bt-sec-hover-color;
+                border: $bt-sec-hover-border;
             }
         }
         &.dark{
