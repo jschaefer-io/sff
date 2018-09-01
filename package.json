@@ -16,7 +16,7 @@
     "grid"
   ],
   "author": "Jannik Schäfer <me@jschaefer.io>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jschaefer-io/sff/issues"
   },
