@@ -1,6 +1,6 @@
 {
   "name": "sff",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "adaptive frontend framework",
   "main": "src/sff.scss",
   "scripts": {},
