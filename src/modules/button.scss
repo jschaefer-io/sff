@@ -12,6 +12,12 @@
         text-decoration: none;
         margin: $bt-margin;
         transition: $bt-transition;
+        &:hover{
+            background: $bt-default-hover-background;
+            color: $bt-default-hover-color;
+            border: $bt-default-hover-border;
+            text-decoration: none;
+        }
         &.prim{
             background: $bt-prim-background;
             color: $bt-prim-color;
@@ -39,14 +45,21 @@
             &:hover{
                 background: $bt-dark-hover-background;
                 color: $bt-dark-hover-color;
+                border: $bt-dark-hover-border;
             }
         }
-
-        &:hover{
-            background: $bt-default-hover-background;
-            color: $bt-default-hover-color;
-            border: $bt-default-hover-border;
-            text-decoration: none;
+        &.transparent{
+            background: $bt-transparent-background;
+            border: $bt-transparent-border;
+            color: $bt-transparent-color;
+            &:hover{
+                background: $bt-transparent-hover-background;
+                border: $bt-transparent-hover-border;
+                color: $bt-transparent-hover-color;
+            }
+        }
+        &.inline{
+            margin: 0;
         }
         &.large{
             font-size: 1.3rem;
