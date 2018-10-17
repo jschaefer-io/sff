@@ -1,16 +1,16 @@
 @mixin sff_typo(){
-    @include headlines{
-        margin: $h-space;
+    %headlines{
         color: $h-color;
         line-height: $h-height;
+        margin: $h-space;
+        font-family: $h-font-family;
+        font-weight: $h-weight;
     }
-
     @each $headline, $size in $h-sizes{
         %#{$headline},
         .#{$headline},
         #{$headline}{
-            font-family: $h-font-family;
-            font-weight: $h-weight;
+            @extend %headlines;
             font-size: $size;
         }
     }
