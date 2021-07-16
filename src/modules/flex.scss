@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @mixin sff_flex(){
     .flex{
         display: flex;
@@ -87,17 +89,17 @@
                     @if (not(index($flex-colExclude, $i))){
                         // Main Columns Sizes
                         .#{$size}-#{$i}{
-                            max-width: (( 100% / $flex-colCount ) * $i);
-                            flex: 0 1 (( 100% / $flex-colCount ) * $i);
+                            max-width: (math.div( 100%, $flex-colCount ) * $i);
+                            flex: 0 1 (math.div( 100%, $flex-colCount ) * $i);
                         }
                         // Push Pull Helpers
                         @if ($flex-pushPull){
                             @if ($i != $flex-colCount){
                                 .#{$size}-push-#{$i}{
-                                    margin-left: (( 100% / $flex-colCount ) * $i);
+                                    margin-left: (math.div( 100%, $flex-colCount ) * $i);
                                 }
                                 .#{$size}-pull-#{$i}{
-                                    margin-right: (( 100% / $flex-colCount ) * $i) * (-1);
+                                    margin-right: (math.div( 100%, $flex-colCount ) * $i) * (-1);
                                 }
                             }
                         }
